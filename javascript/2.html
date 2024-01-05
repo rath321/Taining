@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Javascript program</h2>
+    <div id="data"></div>
+    <!-- <button onclick="xyz()">start</button>
+    <button onclick="xyzclr()">end</button> -->
+    <!-- <button onclick="read()">read</button>
+    <button onclick="create()">create</button>
+    <button onclick="del()">remove</button> -->
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="GetItem()">Get Item</button>
+    <!-- <button onclick="xyz('red')" onmouseover="xyz('green')" onmouseout="xyz('white')">button </button> -->
+    <script>
+      function addItem(){
+        if(localStorage.getItem('myData')!=undefined)
+      {
+        let data=localStorage.getItem('myData');
+        let parsedData=JSON.parse(data);
+        console.log(parsedData)
+        var tmp1=prompt("enter  name");
+        var tmp2=prompt("Enter age");
+        var obj={
+            name:tmp1,
+            age:tmp2
+        }
+        parsedData.push(obj);
+        localStorage.setItem('myData', JSON.stringify(parsedData));
+        
+      }
+      else{
+        var tmp1=prompt("enter  name");
+        var tmp2=prompt("Enter age");
+        var obj={
+            name:tmp1,
+            age:tmp2
+        }
+        var arr=[];
+        arr.push(obj)
+
+        localStorage.setItem('myData', JSON.stringify(arr));
+      }
+
+      }
+      function GetItem(){
+        let data=localStorage.getItem('myData');
+        const parsedData=JSON.parse(data);
+        var str='<table border=1 width=300><tr><th>S.No.</th><th>Name</th><th> Age</th></tr>'
+parsedData.forEach(function(emp, ind){
+    str+=`<tr><td>${ind+1}</td><td>${emp.name}</td><td>${emp.age}</td>`
+})
+str+='</table>'
+document.getElementById('data').innerHTML=str;
+
+      }
+
+
+        // var num=parseInt(prompt("Enter num 1"));
+        // var rev=0;
+        // var sum=0;
+        // while(num>0)
+        // {
+        //  let tmp=num%10;
+        //  rev=rev*10+tmp;
+        //  sum+=tmp;
+        //  num=parseInt(num/10);
+        // }
+        // alert("this is reverese "+rev+"this is sum of digit"+sum)
+
+
+        // var maxi=0;
+        // for(var i=0;i<5;i++)
+        // {
+        //     var num=parseInt(prompt("enter num"))
+        //     if(maxi<num)
+        //     maxi=num;
+        // }
+        // document.getElementById('nik').textContent="the answer is "+maxi;
+        // var arr=[
+        //     [2,3,5],[3,4,6], [3,5,6]
+        // ]
+        // var sum=0;
+        // for(var i=0;i<3;i++)
+        // {
+        //     for(var j=0;j<3;j++)
+        //     {
+        //      sum+=arr[i][j];
+        //     }
+        // }
+
+        // var num=parseInt(prompt("enter num"));
+        // function fn(a){
+        //     if(a==1)
+        //     return 1;
+        //   return a*fn(a-1);
+        // }
+        
+        // document.getElementById('nik').textContent="the sum is "+fn(num);
+        // function xyz(val){
+        //     document.bgColor=val;
+        // }
+        
+
+//   var tmp;
+        ///////////////////////---Array Methods---///////////////
+        // function read()
+        // {
+        //     if(localStorage.getItem('myData')==undefined)
+        //     alert("No data found Pls create one")
+        //     else
+        //     {
+        //         let tmp=localStorage.getItem('myData');
+        //         alert("the data is "+tmp)
+        //     }
+        // }
+        // function create()
+        // {
+        //     if(localStorage.getItem('myData')!=undefined)
+        //     alert("Data already exist")
+        //     else
+        //     {
+        //         let tmp=prompt("enter data");
+        //         localStorage.setItem('myData', tmp)
+        //     }
+        // }
+        // function del()
+        // {
+        //     if(localStorage.getItem('myData')!=undefined)
+        //     {
+        //         localStorage.clear()
+        //     alert("Removed successfully")
+        //     }
+        //     else
+        //     {
+        //       alert("No data exist")
+        //     }
+        // }
+    //   var obj={                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+    //     fname:"nikhil",
+    //     lname:"rathore",
+    //     fullname:function(){
+    //         return `${this.fname} ${this.lname}`;
+    //     }
+
+    //   }
+    //   obj.age=33;
+    //   console.log(obj);
+    //   delete obj.fullname;
+    //   console.log(obj)
+    
+
+
+    </script>
+</body>
+</html>

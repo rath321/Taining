@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <div id="exampleDiv">
+       
+        <p id="demoPara">Hello, World!</p>
+        <img src="../html/images/2.jpeg"id="im" class="imm"/>
+        Gender : <input type="radio" name="nik" value="female"/>
+        <input type="radio" name="nik" value="male"/>
+        <button id="btn">Change Text</button>
+    
+    </div>
+         <div id="target">
+          
+         </div>
+         <button onclick="abc()">click</button>
+    <script>
+        // Function to manipulate the DOM
+        function abc()
+            {
+                let para=document.getElementById('target')
+                para.innerHTML='<b>Hi this is nikhil</b>'
+            }
+            
+        let btn=document.getElementById('btn');
+        btn.addEventListener('click', function(){
+
+            // let im=document.getElementById('im');
+            // im.setAttribute("src", "../html/images/3.jpeg")
+            // im.removeAttribute("class");
+            // let divi=document.getElementById('exampleDiv');
+            // let ulist=document.createElement('ul');
+
+            //  var arr=['nikhil', 'akash', 'rounak']
+            //  for(let i=0;i<3;i++)
+            //  {
+            //     let item=document.createElement('li');
+            //     item.textContent=arr[i];
+            //     ulist.appendChild(item);
+            // }
+            // divi.appendChild(ulist);
+
+
+            // let chk=document.getElementsByName('nik');
+            // chk.forEach(function(gen){
+            //     if(gen.checked)
+            //     {
+            //         alert(gen.value)
+            //     }
+            // })
+
+
+        //     // Access the paragraph element by its ID
+        //     let paragraph = document.getElementById("demoPara");
+
+        //     // **Change the text content**
+        //     paragraph.textContent = "Hare Krishna! Text changed.";
+
+        //     // Create a new element
+        //     let newElement = document.createElement("p");
+        //     newElement.textContent = "New paragraph added.";
+
+        //     // **Append the new element to the div**
+        //     document.getElementById("exampleDiv").appendChild(newElement);
+        
+        })
+        
+    </script>
+</body>
+</html>

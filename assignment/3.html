@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <div id="exampleDiv">
+       
+        <p id="demoPara">Hello, World!</p>
+        <!-- <img src="../html/images/2.jpeg"id="im" class="imm"/> -->
+        <!-- Gender : <input type="radio" name="nik" value="female"/>
+        <input type="radio" name="nik" value="male"/>
+        <button id="btn">Change Text</button>
+     -->
+     <div class="clock">
+        <span id="hour"></span> : <span id="minute"></span> : <span id="second"></span>
+        <button id="btn1">Start</button>
+        <button id="btn2">Stop</button>
+     </div>
+
+    </div>
+         <div id="target">
+          
+         </div>
+         <button onclick="abc()">click</button>
+    <script>
+        // Function to manipulate the DOM
+        var interval;
+        function abc()
+            {
+                let para=document.getElementById('target')
+                para.innerHTML='<b>Hi this is nikhil</b>'
+            }
+        
+        let btn1=document.getElementById('btn1');
+        btn1.addEventListener('click', function(){
+          
+           interval= setInterval(() => {
+                let currentDate = new Date();
+let hours = currentDate.getHours();
+let minutes = currentDate.getMinutes();
+let seconds = currentDate.getSeconds();
+         let t1=document.getElementById('hour');
+         t1.textContent=hours;
+         let t2=document.getElementById('minute');
+         t2.textContent=minutes;
+         let t3=document.getElementById('second');
+         t3.textContent=seconds;
+            }, 1000);
+        
+        })
+        let btn2=document.getElementById('btn2');
+        btn2.addEventListener('click', function(){
+clearInterval(interval);
+        })
+        
+    </script>
+</body>
+</html>

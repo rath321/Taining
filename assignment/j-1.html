@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Javascript program</h2>
+    <script>
+        var num1=parseInt(prompt("Enter num 1"));
+        var num2=parseInt(prompt("Enter num 2"));
+        var sum=num1+num2;
+        var percent=(sum/300)*100;
+        var num=parseInt(prompt("U have 3 choices 1-addition, 2-subtraction, 3-multiplication Enter any number"))
+        switch (num) {
+  case 1:
+    alert("addition is"+sum)
+    break;
+  case 2:
+    alert("subtraction is "+num1-num2)
+    break;
+  case 3:
+    alert("multiplication is "+num1*num2)
+    break;
+  default:
+    console.log("The number is not one, two, or three");
+}
+    </script>
+</body>
+</html>

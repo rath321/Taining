@@ -1,0 +1,59 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Integration</title>
+</head>
+<body>
+    <div>
+        <label for="userInput">Ask a question:</label>
+        <input type="text" id="userInput" />
+        <button onclick="getUserInput()">Submit</button>
+    </div>
+
+    <div id="chatContainer">
+        <div id="chatLog"></div>
+    </div>
+
+    <script>
+        async function getUserInput() {
+            const userInput = document.getElementById("userInput").value;
+            const response = await getChatGPTResponse(userInput);
+            displayMessage(userInput, "user");
+            displayMessage(response, "chatbot");
+        }
+
+        async function getChatGPTResponse(prompt) {
+            const apiKey = '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'; // Replace with your actual API key
+            const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`,
+                },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    max_tokens: 150, // Adjust as needed
+                }),
+            });
+
+            const data = await response.json();
+            console.log(data)
+            return data;
+        }
+
+        function displayMessage(message, sender) {
+            const chatLog = document.getElementById("chatLog");
+            const messageDiv = document.createElement("div");
+            messageDiv.className = sender === "user" ? "userMessage" : "chatbotMessage";
+            messageDiv.innerHTML = `<strong>${sender === "user" ? "You:" : "ChatGPT:"}</strong> ${message}`;
+            chatLog.appendChild(messageDiv);
+        }
+    </script>
+</body>
+</html>

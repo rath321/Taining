@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./css/style.css"/>
+<link rel="script" href="./js/script.js"/>
+<body>
+    <h2>FAQ Application</h2>
+    <div id="layout">
+        <div class="accordion">
+            <div id="div1">Q 1</div>
+            <div class="div">Ans 1</div>
+
+        </div>
+      
+        <div class="accordion">
+            <div id="div2">Q 2</div>
+            <div class="div">Ans 2</div>
+            
+        </div>
+        <div class="accordion">
+            <div id="div3">Q 3</div>
+            <div class="div">Ans 3</div>
+            
+        </div>
+    </div>
+    <script>
+        var acc=document.querySelectorAll(".accordion")
+acc.forEach(function(e){
+    e.addEventListener("click", function(){
+        console.log(e);
+        if(e.classList.contains("active"))
+        {
+            e.classList.remove("active");
+        }
+        else
+        e.classList.add("active")
+    })
+})
+    </script>
+</body>
+</html>
